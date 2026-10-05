@@ -1,0 +1,36 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "license": "MPL-2.0",
+  "author": "Kaleidos INC Sucursal en España SL",
+  "private": true,
+  "packageManager": "pnpm@12.6.0+sha512.3ef68f951cb111ac204b4a5a16f0b2ddf0da56a96e0413e81d855d9f0b55ef926714709028e1cd00c405c2c5fb7b9e8ec4dc46777c805d0373c2f2ff00fd20ec",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/penpot/penpot"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "nodemon": "^3.1.14",
+    "prettier": "3.9.9",
+    "source-map-support": "^0.5.21",
+    "ws": "^8.22.0"
+  },
+  "dependencies": {
+    "date-fns": "^4.4.0"
+  },
+  "scripts": {
+    "lint:clj": "clj-kondo --fail-level error --config-dir ../.clj-kondo --lint src/",
+    "lint:js": "exit 0",
+    "check-fmt:clj": "cljfmt check --parallel=true src/ test/",
+    "check-fmt:js": "prettier -c src/**/*.js",
+    "fmt:clj": "cljfmt fix --parallel=true src/ test/",
+    "fmt:js": "prettier -c src/**/*.js -w",
+    "lint": "pnpm run lint:clj",
+    "watch:test": "concurrently \"clojure -M:dev:shadow-cljs watch test\" \"nodemon -C -d 2 -w target/tests/ --exec 'node target/tests/test.js'\"",
+    "build:test": "clojure -M:dev:shadow-cljs compile test",
+    "test": "pnpm run build:test && node target/tests/test.js",
+    "test:quiet": "node ./scripts/test-quiet.js"
+  }
+}
